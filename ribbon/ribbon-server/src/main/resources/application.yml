@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ribbon-server
+
+server:
+  port: 8090
