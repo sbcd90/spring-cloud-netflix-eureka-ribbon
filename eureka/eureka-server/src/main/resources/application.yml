@@ -1,6 +1,12 @@
-server:
-  port: 8761
+spring:
+  application:
+    name: eureka-workshop789-server
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
+    serviceUrl:
+      defaultZone: https://eureka-workshop789-server.cfapps.us10.hana.ondemand.com/eureka/
+  instance:
+    nonSecurePort: 80
+    hostname: ${vcap.application.uris[0]}

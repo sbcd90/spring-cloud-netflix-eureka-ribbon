@@ -1,0 +1,6 @@
+---
+applications:
+  - name: eureka-workshop789-server
+    path: target\eureka-server-1.0-SNAPSHOT.jar
+    host: eureka-workshop789-server
+    memory: 1024M

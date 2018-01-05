@@ -1,0 +1,10 @@
+---
+applications:
+  - name: eureka-workshop789-consumer
+    path: target\eureka-consumer-1.0-SNAPSHOT.jar
+    host: eureka-workshop789-consumer
+    memory: 1024M
+    env:
+      spring.profiles.active: cloud
+    services:
+      - eureka-service

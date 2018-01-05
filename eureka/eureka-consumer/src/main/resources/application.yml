@@ -2,8 +2,24 @@ spring:
   application:
     name: eureka-consumer
 server:
-  port: 8080
+  port: 8086
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      defaultZone: http://127.0.0.1:8761/eureka/
+---
+spring:
+  profiles: cloud
+  application:
+    name: ${vcap.application.uris[0]}
+eureka:
+  instance:
+    nonSecurePort: 80
+    hostname: ${vcap.application.uris[0]}
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.url}/eureka/
+ribbon-server:
+  ribbon:
+    eureka:
+      enabled: true

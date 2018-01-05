@@ -1,0 +1,16 @@
+---
+spring:
+  application:
+    name: hystrix-gateway
+  cloud:
+    config:
+      enabled: false
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8080}
+    ip-address: 127.0.0.1
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
